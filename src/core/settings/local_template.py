@@ -1,0 +1,53 @@
+# SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = ''
+
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = True
+
+DATABASES = {
+    'default': {
+        'ENGINE': '',
+        'NAME': '',
+        'USER': '',
+        'PASSWORD': ''
+    }
+}
+
+FRONTEND_DOMAIN = ''
+
+# Game
+TRACKER_NETWORK_API_KEY = ''
+PUBG_API_KEY = ''
+BRAWALHALLA_API_KEY = ''
+
+# Social
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = ''
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = ''
+
+SOCIAL_AUTH_FACEBOOK_KEY = ''
+SOCIAL_AUTH_FACEBOOK_SECRET = ''
+
+SOCIAL_AUTH_TWITTER_KEY = ''
+SOCIAL_AUTH_TWITTER_SECRET = ''
+
+SOCIAL_AUTH_TWITCH_KEY = ''
+SOCIAL_AUTH_TWITCH_SECRET = ''
+SOCIAL_AUTH_TWITCH_SCOPE = []
+
+# Game platform
+STEAM_API_KEY = ''
+XBOX_AUTHENTICATION_URL = ''
+
+# Email
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
+
+# AWS s3
+AWS_ACCESS_KEY = ''
+AWS_SECRET_KEY = ''
+
+# Celery
+BROKER_URL = ''
+
+# FCM
+FCM_API_KEY = ''
