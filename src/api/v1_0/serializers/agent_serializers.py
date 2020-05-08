@@ -9,7 +9,14 @@ class AgentSerializer(serializers.ModelSerializer):
     """
     class Meta:
         model = Agent
-        fields = '__all__'
+        fields = ('id', 'email', 'password')
+    
+    def create(self, validated_data):
+        print('validated_data------------------', validated_data)
+        agent = super().create(validated_data)
+        agent.set_password(agent.password)
+        agent.save()
+        return agent
 
 class AgentLoginSerializer(serializers.ModelSerializer):
     """
@@ -20,19 +27,12 @@ class AgentLoginSerializer(serializers.ModelSerializer):
     class Meta:
         model = Agent
         fields = ('email', 'password')
-        extra_kwargs = {
-            'password': {
-                'write_only': True
-            }
-        }
 
     def validate(self, data):
         """
         User authentication 
         """
-        print('data-------------', data)
         agent = authenticate(email=data['email'], password=data['password'])
-        print('agent-------------', agent) 
         if not agent:
             raise AuthenticationFailed()
         return agent

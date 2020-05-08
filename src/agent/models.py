@@ -5,7 +5,6 @@ from .manager import UserManager
 class Agent(AbstractBaseUser):
     
     email = models.EmailField(max_length=255, unique=True, null=False)
-
     objects = UserManager()
     
     USERNAME_FIELD = 'email'
